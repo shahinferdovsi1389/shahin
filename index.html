@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="استاد فاطمه حسین‌زاده - مربی حرفه‌ای کیک بوکسینگ، بوکس، هابکیدو و ورزش‌های رزمی در نیشابور">
-    <meta name="keywords" content="استاد فاطمه حسین‌زاده، کیک بوکسینگ، بوکس، نیشابور، هابکیدو، دفاع شخصی، ورزش‌های رزمی">
+    <meta name="description" content="استاد فاطمه حسین‌زاده - مربی حرفه‌ای کیک بوکسینگ، بوکس و ورزش‌های رزمی در نیشابور">
+    <meta name="keywords" content="استاد فاطمه حسین‌زاده، کیک بوکسینگ، بوکس، نیشابور، دفاع شخصی، ورزش‌های رزمی">
     <meta name="author" content="استاد فاطمه حسین‌زاده">
-    <meta property="og:title" content="استاد فاطمه حسین‌زاده - مربی کیک بوکسینگ و بوکس">
-    <meta property="og:description" content="آموزش کیک بوکسینگ، بوکس و ورزش‌های رزمی توسط استاد فاطمه حسین‌زاده در نیشابور.">
-    <meta property="og:image" content="your-image-url.jpg">
-    <meta property="og:url" content="your-website-url.com">
     <title>استاد فاطمه حسین‌زاده - مربی کیک بوکسینگ</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -21,59 +17,66 @@
             font-family: 'Vazirmatn', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #232526, #414345);
+            background: #111;
             color: white;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 750px;
             margin: auto;
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
             text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
         .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: scale(1.02);
         }
         .header-img {
             width: 100%;
             border-radius: 15px;
             margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
         }
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
-            margin-bottom: 15px;
-            color: #ff512f;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #ff4500;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
         .subtitle {
             font-size: 20px;
             margin-bottom: 20px;
             color: #ddd;
+            animation: fadeIn 2s ease-in-out;
         }
-        .skills h2, .contact h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #ff512f;
-            text-transform: uppercase;
+        .promo {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ff4500;
+        }
+        .promo h2 {
+            font-size: 24px;
+            color: #ff4500;
         }
         .skills, .contact {
             background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        .skills p, .contact p {
-            font-size: 18px;
-            color: #bbb;
+        .skills h2, .contact h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff4500;
         }
         .btn {
             display: inline-block;
@@ -86,24 +89,12 @@
             font-weight: bold;
             transition: 0.3s;
         }
-        .btn-call {
-            background: #28a745;
-        }
-        .btn-call:hover {
-            background: #218838;
-        }
-        .btn-insta {
-            background: #e1306c;
-        }
-        .btn-insta:hover {
-            background: #c72c5f;
-        }
-        .btn-whatsapp {
-            background: #25d366;
-        }
-        .btn-whatsapp:hover {
-            background: #1ebd50;
-        }
+        .btn-call { background: #28a745; }
+        .btn-call:hover { background: #218838; }
+        .btn-insta { background: #e1306c; }
+        .btn-insta:hover { background: #c72c5f; }
+        .btn-whatsapp { background: #25d366; }
+        .btn-whatsapp:hover { background: #1ebd50; }
         .phone {
             font-size: 20px;
             font-weight: bold;
@@ -121,6 +112,14 @@
             width: 48%;
             border-radius: 10px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -129,11 +128,17 @@
         <img src="your-header-image.jpg" alt="استاد فاطمه حسین‌زاده" class="header-img">
         
         <h1>🏆 استاد فاطمه حسین‌زاده 🏆</h1>
-        <p class="subtitle">مربی حرفه‌ای کیک بوکسینگ، بوکس و ورزش‌های رزمی با بیش از 10 سال تجربه آموزش</p>
-        
+        <p class="subtitle">مربی حرفه‌ای کیک بوکسینگ، بوکس، و ورزش‌های رزمی با بیش از 10 سال تجربه</p>
+
+        <div class="promo">
+            <h2>🔥 بهترین دوره‌های آموزشی 🔥</h2>
+            <p>آموزش گراپلینگ، کیک بوکسینگ، ووشو، مبارزات آزاد رینگی، درگیری خیابانی، سلاح سرد (نانچیکو، چوب، سای، شمشیر)، فرم‌دهی عضلات و تناسب اندام</p>
+            <p><strong>۹۹٪ برد در مسابقات! "بهترین‌ها، بهترین را انتخاب می‌کنند!"</strong></p>
+        </div>
+
         <div class="skills">
             <h2>💪 مهارت‌ها 💪</h2>
-            <p>لانچیکو | کیک‌بوکسینگ | هابکیدو | بوکس | دفاع شخصی | تناسب اندام</p>
+            <p>کیک‌بوکسینگ | بوکس | دفاع شخصی | ووشو | مبارزات خیابانی | سلاح سرد | تناسب اندام</p>
         </div>
 
         <div class="contact">
@@ -150,10 +155,10 @@
 
         <div class="gallery">
             <img src="image1.jpg" alt="تمرینات کیک بوکسینگ">
-            <img src="image2.jpg" alt="کلاس هابکیدو">
+            <img src="image2.jpg" alt="کلاس ووشو">
             <img src="image3.jpg" alt="بوکس در باشگاه">
             <img src="image4.jpg" alt="تمرینات نانچیکو">
         </div>
     </div>
 </body>
-</html>
+            </html>
