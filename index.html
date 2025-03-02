@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="استاد فاطمه حسین‌زاده - مربی حرفه‌ای کیک بوکسینگ، بوکس و ورزش‌های رزمی در نیشابور">
-    <title>استاد فاطمه حسین‌زاده - مربی کیک بوکسینگ</title>
+    <meta name="description" content="فاطمه حسین‌زاده - مربی حرفه‌ای کیک بوکسینگ، بوکس و ورزش‌های رزمی در نیشابور">
+    <title>فاطمه حسین‌زاده | کیک بوکسینگ نیشابور</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,6 +13,7 @@
             box-sizing: border-box;
             direction: rtl;
             font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
         }
         body {
             background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
@@ -30,22 +31,29 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
         }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #ff4500;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav a:hover {
+            background: #ff652f;
+        }
         .header-img {
             width: 100%;
             border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-        }
-        h1 {
-            font-size: 38px;
-            font-weight: bold;
-            color: #ff4500;
-            text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
-        }
-        .subtitle {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #ddd;
         }
         .section {
             background: rgba(255, 255, 255, 0.1);
@@ -54,50 +62,27 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        h2 {
-            font-size: 24px;
-            color: #ff4500;
-            margin-bottom: 15px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-        }
-        .btn-call { background: #28a745; }
-        .btn-insta { background: #e1306c; }
-        .btn-whatsapp { background: #25d366; }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 69, 0, 0.7);
-        }
         .video-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            overflow-x: scroll;
+            gap: 10px;
+            padding-bottom: 10px;
         }
         .video-container video {
-            width: 48%;
-            height: 200px;
+            width: 400px;
+            height: 250px;
             border-radius: 10px;
-            margin-bottom: 10px;
             box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
         }
         .gallery {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            overflow-x: scroll;
+            gap: 10px;
+            padding-bottom: 10px;
         }
         .gallery img {
-            width: 30%;
+            width: 250px;
             border-radius: 10px;
-            margin-bottom: 10px;
             transition: transform 0.3s ease-in-out;
         }
         .gallery img:hover {
@@ -107,43 +92,60 @@
     </style>
 </head>
 <body>
+    <!-- 🚀 منوی بالا برای رفتن به بخش‌های مختلف -->
+    <div class="nav">
+        <a href="#about">درباره استاد</a>
+        <a href="#videos">ویدیوها</a>
+        <a href="#gallery">گالری تصاویر</a>
+        <a href="#contact">تماس با ما</a>
+    </div>
+
     <div class="container">
-        <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133233_566.jpg" alt="استاد فاطمه حسین‌زاده" class="header-img">
+        <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133233_566.jpg" alt="فاطمه حسین‌زاده" class="header-img">
         
-        <h1>🏆 استاد فاطمه حسین‌زاده 🏆</h1>
+        <h1>🏆 فاطمه حسین‌زاده | کیک بوکسینگ نیشابور 🏆</h1>
         <p class="subtitle">مربی حرفه‌ای کیک بوکسینگ، بوکس، و ورزش‌های رزمی با بیش از ۲۰ سال تجربه</p>
 
-        <div class="section">
+        <!-- 📌 بخش درباره استاد -->
+        <div class="section" id="about">
             <h2>🔷 درباره استاد 🔷</h2>
             <p>دان ۴ کیک بوکس، مربیگری درجه ۲، داوری درجه ۳، و سابقه شرکت در مسابقات انتخابی تیم ملی.</p>
             <p>آموزش: کیک بوکسینگ، ووشو، دفاع شخصی، سلاح سرد، آمادگی جسمانی، بدنسازی (لاغری و افزایش وزن).</p>
             <p><strong>شعار ما:</strong> بهترین‌ها، بهترین را انتخاب می‌کنند!</p>
         </div>
 
-        <div class="section">
+        <!-- 🎥 بخش ویدیوهای تمرینی -->
+        <div class="section" id="videos">
             <h2>🎥 ویدیوهای تمرینی 🎥</h2>
             <div class="video-container">
                 <video controls>
-                    <source src="https://raw.githubusercontent.com/https://github.com/shahinferdovsi1389/shahinferdovsi1389/main/assets/videos/video1.mp4" type="video/mp4">
+                    <source src="https://raw.githubusercontent.com/shahinferdovsi1389/shahinferdovsi1389/main/assets/videos/video1.mp4" type="video/mp4">
                 </video>
                 <video controls>
-                    <source src="https://raw.githubusercontent.com/https://github.com/shahinferdovsi1389/shahinferdovsi1389/main/assets/videos/video2.mp4" type="video/mp4">
+                    <source src="https://raw.githubusercontent.com/shahinferdovsi1389/shahinferdovsi1389/main/assets/videos/video2.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
 
-        <div class="section">
-            <h2>📸 گالری تصاویر 📸</h2>
-            <div class="gallery">
-                <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133233_681.jpg" alt="تمرینات">
-                <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133236_717.jpg" alt="مسابقات">
-                <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_932.jpg" alt="باشگاه">
-                <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_957.jpg" alt="تمرین">
-                <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg" alt="بدنسازی">
-            </div>
-        </div>
+    <div class="section" id="gallery">
+    <h2>📸 گالری تصاویر 📸</h2>
+    <div class="gallery">
+        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_957.jpg" alt="تمرینات">
+        <img https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg" alt="مسابقات">
+        <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133236_717.jpg" alt="باشگاه">
+        <img src="https://raw.githubusercontent.com/shahinferdovsi1389/shahin/refs/heads/main/IMG_20250302_133233_681.jpg" alt="تمرین">
+        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg" alt="بدنسازی">
+        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_254.jpg" alt="مبارزه">
+        <img src="IMG_20250302_133237_368.jpg" alt="تمرین تیمی">
+        <img src="IMG_20250302_133237_407.jpg" alt="کیک بوکسینگ">
+        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_418.jpg" alt="جلسه تمرینی">
+        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_551.jpg" alt="تمرین خصوصی">
+      
+    </div>
+</div>
 
-        <div class="section">
+        <!-- 📍 بخش اطلاعات تماس -->
+        <div class="section" id="contact">
             <h2>📍 اطلاعات تماس 📍</h2>
             <p>نیشابور، ابتدای امین اسلامی، باشگاه کی وان</p>
             <p class="phone">📞 ۰۹۳۶۱۴۰۳۶۸۸</p>
