@@ -3,205 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="فاطمه حسین‌زاده - مربی حرفه‌ای کیک بوکسینگ، بوکس و ورزش‌های رزمی در نیشابور">
-    <title>استاد فاطمه حسین‌زاده کیک بوکسینگ نیشابور </title>
-    <link rel="icon" href="">
+    <meta name="description" content="استاد فاطمه حسین‌زاده، مربی و قهرمان کیک بوکسینگ در نیشابور. آموزش حرفه‌ای کیک بوکسینگ، ووشو و دفاع شخصی در باشگاه کی‌وان.">
+    <meta name="keywords" content="کیک بوکسینگ نیشابور, مربی کیک بوکسینگ, فاطمه حسین زاده, باشگاه کی وان, آموزش بوکس, دفاع شخصی بانوان">
+    
+    <meta property="og:title" content="استاد فاطمه حسین‌زاده | کیک بوکسینگ نیشابور">
+    <meta property="og:description" content="آموزش حرفه‌ای کیک بوکسینگ، ووشو و دفاع شخصی در باشگاه کی‌وان نیشابور.">
+    <meta property="og:image" content="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_566.jpg?raw=true">
+    <meta property="og:url" content="YOUR_WEBSITE_URL_HERE">
+    <meta property="og:type" content="website">
+
+    <title>استاد فاطمه حسین‌زاده | قهرمان کیک بوکسینگ نیشابور</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "باشگاه کی‌وان",
+      "image": "https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_566.jpg?raw=true",
+      "address": { "@type": "PostalAddress", "streetAddress": "ابتدای امین اسلامی", "addressLocality": "نیشابور", "addressCountry": "IR" },
+      "telephone": "+989361403688", "priceRange": "$$",
+      "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "18:00", "closes": "19:30" },
+      "employee": { "@type": "Person", "name": "فاطمه حسین‌زاده", "jobTitle": "مربی کیک بوکسینگ", "knowsAbout": ["کیک بوکسینگ", "ووشو", "دفاع شخصی", "سلاح سرد", "آمادگی جسمانی"], "alumniOf": "فدراسیون ورزش های رزمی ایران" }
+    }
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            direction: rtl;
-            font-family: 'Vazirmatn', sans-serif;
-            scroll-behavior: smooth;
+        :root {
+            --primary-color: #ff3c00;
+            --dark-bg: #000000;
+            --card-bg: #141414;
+            --text-light: #f5f5f5;
+            --text-secondary: #aaa;
+            --font-main: 'Vazirmatn', sans-serif;
+            --hexagon-gap: 5px;
+            --hexagon-size: 150px;
         }
-        body {
-            background: linear-gradient(135deg, #0f0f0f, #160101);
-            color: white;
-            font-size: 16px;
-            padding: 20px;
-            text-align: center;
+        * { margin: 0; padding: 0; box-sizing: border-box; direction: rtl; font-family: var(--font-main); scroll-behavior: smooth; }
+        
+        body { background-color: var(--dark-bg); color: var(--text-light); text-align: center; overflow-x: hidden; }
+
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--dark-bg); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
+        .loader { width: 50px; height: 50px; border: 5px solid var(--text-secondary); border-top-color: var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .main-nav { position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent); transition: background-color 0.3s; }
+        .main-nav.scrolled { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
+        .nav-logo { font-size: 1.6rem; font-weight: 900; color: white; text-shadow: 0 0 10px var(--primary-color); z-index: 1001; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 700; position: relative; padding: 5px 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%); }
+        .nav-links a:hover::after { width: 100%; }
+        .hamburger { display: none; font-size: 2rem; color: var(--primary-color); cursor: pointer; z-index: 1001; }
+
+        .hero { height: 100vh; position: relative; display: flex; justify-content: center; align-items: center; text-align: center; padding: 2rem 5%; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_566.jpg?raw=true') no-repeat center center/cover; z-index: 1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, var(--dark-bg) 95%); z-index: 2; }
+        .hero-content { z-index: 3; position: relative; }
+        h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 900; color: white; line-height: 1.2; text-shadow: 0 0 20px rgba(0,0,0,0.8); }
+        h1 .line { display: block; overflow: hidden; }
+        h1 .line-inner { display: block; }
+        h1 span { color: var(--primary-color); }
+        .hero .subtitle { font-size: 1.3rem; color: var(--text-secondary); margin-top: 1rem; }
+        .hero .btn { margin-top: 2rem; }
+
+        .section { padding: 100px 5%; position: relative; }
+        .section h2 { font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 900; margin-bottom: 1rem; color: var(--primary-color); }
+        .section .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px; }
+        
+        .stats-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+        .stat-item { position: relative; width: 220px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--card-bg); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); transition: transform 0.3s ease; }
+        .stat-item:hover { transform: scale(1.1); }
+        .stat-item .number { font-size: 3rem; font-weight: 900; color: var(--primary-color); }
+        .stat-item .label { font-size: 1rem; color: var(--text-secondary); margin-top: 10px; }
+
+        #gallery-container { display: flex; justify-content: center; align-items: center; padding: 50px 0; }
+        .hexagon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--hexagon-gap); width: calc(var(--hexagon-size) * 4 + var(--hexagon-gap) * 3); list-style: none; }
+        .hexagon { position: relative; width: var(--hexagon-size); height: calc(var(--hexagon-size) * 1.1547); background-color: var(--card-bg); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); cursor: pointer; transition: transform 0.3s ease; overflow: hidden; }
+        .hexagon:nth-child(7n-3) { margin-left: calc(var(--hexagon-size) / 2 + var(--hexagon-gap) / 2); }
+        .hexagon img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .hexagon:hover { transform: scale(1.1); z-index: 10; }
+        .hexagon:hover img { transform: scale(1.2); }
+        
+        .video-slider-container { position: relative; max-width: 800px; margin: auto; }
+        .video-viewport { overflow: hidden; }
+        .video-track { display: flex; }
+        .video-slide { flex: 0 0 100%; padding: 0 10px; }
+        .video-slide iframe { width: 100%; height: 400px; border-radius: 15px; border: none; }
+        .slider-nav { position: absolute; top: 50%; width: 100%; left: 0; transform: translateY(-50%); display: flex; justify-content: space-between; padding: 0 10px; pointer-events: none; }
+        .slider-nav button { pointer-events: all; background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.5rem; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; transition: background-color 0.3s; }
+        .slider-nav button:hover { background: var(--primary-color); }
+        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .slider-dots .dot { width: 12px; height: 12px; border-radius: 50%; background: #444; cursor: pointer; transition: background-color 0.3s; }
+        .slider-dots .dot.active { background: var(--primary-color); }
+
+        .btn { display: inline-block; background: linear-gradient(135deg, #ff652f, var(--primary-color)); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(255, 60, 0, 0.3); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 60, 0, 0.5); }
+        .btn i { margin-left: 10px; }
+
+        #back-to-top { position: fixed; bottom: -50px; left: 30px; width: 50px; height: 50px; background: var(--primary-color); color: white; border-radius: 50%; line-height: 50px; text-align: center; font-size: 1.5rem; cursor: pointer; transition: all 0.4s; z-index: 999; }
+        #back-to-top.visible { bottom: 30px; }
+        #back-to-top:hover { transform: scale(1.1); }
+        
+        .lightbox { display: none; position: fixed; z-index: 2000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.9); justify-content:center; align-items:center; }
+        .lightbox-content { max-width:90vw; max-height:85vh; animation: zoomIn 0.4s; }
+        .lightbox-close { position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer; }
+        @keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+        footer { padding: 40px 0; background: #050505; color: var(--text-secondary); margin-top: 50px; }
+        
+        /* --- Mobile Styles --- */
+        @media (max-width: 992px) {
+            .hexagon-grid { grid-template-columns: repeat(3, 1fr); width: calc(var(--hexagon-size) * 3 + var(--hexagon-gap) * 2); }
+            .hexagon:nth-child(7n-3) { margin-left: 0; }
+            .hexagon:nth-child(5n-2) { margin-left: calc(var(--hexagon-size) / 2 + var(--hexagon-gap) / 2); }
         }
-        .container {
-            max-width: 95vw;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            background: #a7a5a5;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .nav a:hover {
-            background: #ff652f;
-        }
-        .header-img {
-            width: 100%;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-        }
-        .section {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            height: 70%;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-        }
-        .video-container {
-            display: flex;
-            overflow-x: scroll;
-            gap: 10px;
-            padding-bottom: 10px;
-        }
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-        }
-        .gallery {
-            background: linear-gradient(90deg,red,rgb(32, 15, 12));
-            display: flex;
-            overflow-x: scroll;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 20px;
-            margin-top: 10px;
-        }
-        .gallery img {
-            width: 600px;
-            border-radius: 10px;
-            height: 600px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-        @media (max-width:450px) {
-            .gallery img{
-                width: 270px;
-                height: 270px;
+        @media (max-width: 768px) {
+            /* Full-screen Mobile Menu */
+            .nav-links {
+                display: flex;
+                flex-direction: column; justify-content: center; align-items: center;
+                position: fixed; top: 0; left: 0;
+                width: 100%; height: 100%;
+                background-color: rgba(0,0,0,0.95);
+                backdrop-filter: blur(5px);
+                clip-path: circle(0% at 90% 5%);
+                transition: clip-path 0.5s ease-in-out;
             }
+            .nav-links.active { clip-path: circle(150% at 90% 5%); }
+            .nav-links a { font-size: 2rem; margin: 15px 0; }
+            .hamburger { display: block; }
+
+            /* Mobile Gallery Layout */
+            #gallery-container { padding: 20px 0; }
+            .hexagon-grid {
+                grid-template-columns: 1fr;
+                width: 100%;
+                gap: 20px;
+            }
+            .hexagon {
+                width: 70vw; /* Larger hexagons for mobile */
+                height: calc(70vw * 1.1547);
+                margin: 0 auto !important;
+            }
+
+            .video-slide iframe { height: 250px; }
         }
-        .btn{
-            border-radius: 20px;
-            background: linear-gradient(135deg,rgb(155, 1, 1),red);
-            transition: 1s;
-            box-shadow: 5px 5px 5px;
-            cursor: pointer;
-            color: black;
-            padding: 10px;
-            display: block;
-            width: 100px;
-            text-decoration: none;
-            margin: auto;
-            margin-bottom:5px;
-        }
-        .btn:hover{
-            color: gold;
-            transform: rotateZ(360deg);
-            background: linear-gradient(135deg,red,black);
+        @media (max-width: 480px) {
+            :root { --hexagon-size: 120px; }
+            .video-slider-container { padding: 0; }
+            .slider-nav { display: none; }
+            .video-viewport { overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 10px; }
+            .video-slide { scroll-snap-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- 🚀 منوی بالا برای رفتن به بخش‌های مختلف -->
-    <div class="nav">
-        <a href="#about">درباره استاد</a>
-        <a href="#videos">ویدیوها</a>
-        <a href="#gallery">گالری تصاویر</a>
-        <a href="#contact">تماس با ما</a>
-    </div>
 
-    <div class="container">
-        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_566.jpg?raw=true" alt="فاطمه حسین‌زاده" class="header-img">
-        
-        <h1>🏆 فاطمه حسین‌زاده | کیک بوکسینگ نیشابور 🏆</h1>
-        <p class="subtitle">مربی حرفه‌ای کیک بوکسینگ، بوکس، و ورزش‌های رزمی با بیش از ۲۰ سال تجربه</p>
+    <div id="preloader"><div class="loader"></div></div>
 
-        <!-- 📌 بخش درباره استاد -->
-        <div class="section" id="about">
-            <h2>🔷 درباره استاد 🔷</h2>
-            <p>دان ۴ کیک بوکس، مربیگری درجه ۲، داوری درجه ۳، و سابقه شرکت در مسابقات انتخابی تیم ملی.</p>
-            <p>آموزش: کیک بوکسینگ، ووشو، دفاع شخصی، سلاح سرد، آمادگی جسمانی، بدنسازی (لاغری و افزایش وزن).</p>
-            <p><strong>شعار ما:</strong> بهترین‌ها، بهترین را انتخاب می‌کنند!</p>
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-logo">🏆 کی‌وان</div>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">درباره</a>
+            <a href="#stats">افتخارات</a>
+            <a href="#gallery">گالری</a>
+            <a href="#videos">ویدیوها</a>
+            <a href="#contact">تماس</a>
         </div>
+        <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
+    </nav>
 
-        <!-- 🎥 بخش ویدیوهای تمرینی -->
-        <div class="section" id="videos">
-            <h2>🎥 ویدیوهای تمرینی 🎥</h2><br>
-            <div class="video-container">
-                <iframe src="https://www.aparat.com/video/video/embed/videohash/ujbd252/vt/frame?titleShow=true" 
-                allowFullScreen="true" 
-                webkitallowfullscreen="true"
-                 mozallowfullscreen="true"></iframe>
-                 <iframe src="https://www.aparat.com/video/video/embed/videohash/lkf1nmr/vt/frame?titleShow=true" 
-                 allowFullScreen="true"
-                  webkitallowfullscreen="true"
-                   mozallowfullscreen="true"></iframe>
-                   <iframe src="https://www.aparat.com/video/video/embed/videohash/nofv813/vt/frame?titleShow=true"  
-                   allowFullScreen="true" 
-                   webkitallowfullscreen="true"
-                    mozallowfullscreen="true"></iframe>
-                    <iframe src="https://www.aparat.com/video/video/embed/videohash/rkx5520/vt/frame?titleShow=true"  
-                    allowFullScreen="true"
-                     webkitallowfullscreen="true"
-                      mozallowfullscreen="true"></iframe>
+    <header class="hero">
+        <div class="hero-bg" data-speed="0.5"></div>
+        <div class="hero-overlay" data-speed="0.7"></div>
+        <div class="hero-content" data-speed="0.9">
+            <h1>
+                <span class="line"><span class="line-inner">فاطمه حسین‌زاده</span></span>
+                <span class="line"><span class="line-inner"><span>قهرمان</span> کیک‌بوکسینگ</span></span>
+            </h1>
+            <p class="subtitle">جایی که اراده به قدرت تبدیل می‌شود.</p>
+            <a href="#about" class="btn">سفر خود را شروع کنید <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
 
+    <main>
+        <section class="section" id="about">
+            <h2 class="gsap-reveal">استادی با ۲۰ سال تجربه</h2>
+            <p class="section-subtitle gsap-reveal">
+                فاطمه حسین‌زاده، با سابقه‌ای درخشان در کونگ‌فو توآ و کیک‌بوکسینگ، قهرمانان بسیاری را پرورش داده و آماده‌ی انتقال دانش و تجربه‌ی خود به شماست.
+            </p>
+        </section>
+
+        <section class="section" id="stats">
+            <h2 class="gsap-reveal">افتخارات در یک نگاه</h2>
+            <div class="stats-container">
+                <div class="stat-item gsap-reveal"><div class="number" data-target="20">0</div><div class="label">سال تجربه</div></div>
+                <div class="stat-item gsap-reveal"><div class="number" data-target="4">0</div><div class="label">دان کیک‌بوکسینگ</div></div>
+                <div class="stat-item gsap-reveal"><div class="number" data-target="100">0</div><div class="label">قهرمان پرورش‌یافته</div></div>
             </div>
-        </div>
+        </section>
+        
+        <section class="section" id="gallery">
+            <h2 class="gsap-reveal">لحظات ماندگار</h2>
+            <div id="gallery-container">
+                <ul class="hexagon-grid">
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_681.jpg?raw=true" alt="گالری ۱" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_932.jpg?raw=true" alt="گالری ۲" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_717.jpg?raw=true" alt="گالری ۳" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_957.jpg?raw=true" alt="گالری ۴" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg?raw=true" alt="گالری ۵" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_254.jpg?raw=true" alt="گالری ۶" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_368.jpg?raw=true" alt="گالری ۷" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_407.jpg?raw=true" alt="گالری ۸" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_418.jpg?raw=true" alt="گالری ۹" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_551.jpg?raw=true" alt="گالری ۱۰" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp%20Image%202025-06-08%20at%2020.07.08.jpeg?raw=true" alt="گالری ۱۱" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp%20Image%202025-06-08%20at%2020.07.10.jpeg?raw=true" alt="گالری ۱۲" loading="lazy"></li>
+                    <li class="hexagon gsap-reveal"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG-20250609-WA0001.jpg?raw=true" alt="گالری ۱۳" loading="lazy"></li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="section" id="gallery">
-    <h2>📸 گالری تصاویر 📸</h2>
-    <div class="gallery">
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_681.jpg?raw=true">
-        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133233_681.jpg?raw=true" alt="تمرینات" ></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_932.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_932.jpg?raw=true" alt="مسابقات"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_717.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_717.jpg?raw=true" alt="باشگاه"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_957.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133236_957.jpg?raw=true" alt="تمرین"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_094.jpg?raw=true" alt="بدنسازی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_254.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_254.jpg?raw=true" alt="مبارزه"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_368.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_368.jpg?raw=true" alt="تمرین تیمی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_407.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_407.jpg?raw=true" alt="کیک بوکسینگ"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_418.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_418.jpg?raw=true" alt="جلسه تمرینی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_551.jpg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG_20250302_133237_551.jpg?raw=true" alt="تمرین خصوصی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp Image 2025-06-08 at 20.07.08.jpeg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp Image 2025-06-08 at 20.07.08.jpeg?raw=true" alt="تمرین خصوصی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp Image 2025-06-08 at 20.07.10.jpeg?raw=true"><img src="https://github.com/shahinferdovsi1389/shahin/blob/main/WhatsApp Image 2025-06-08 at 20.07.10.jpeg?raw=true" alt="تمرین خصوصی"></a>
-        <a href="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG-20250609-WA0001.jpg?raw=true">
-        <img src="https://github.com/shahinferdovsi1389/shahin/blob/main/IMG-20250609-WA0001.jpg?raw=true" alt="تمرینات" ></a>
-      
-    </div>
-</div>
+        <section class="section" id="videos">
+            <h2 class="gsap-reveal">حرکت، قدرت، انگیزه</h2>
+            <div class="video-slider-container gsap-reveal">
+                <div class="video-viewport">
+                    <div class="video-track">
+                        <div class="video-slide"><iframe src="https://www.aparat.com/video/video/embed/videohash/ujbd252/vt/frame?titleShow=true" title="Video 1" loading="lazy" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-slide"><iframe src="https://www.aparat.com/video/video/embed/videohash/lkf1nmr/vt/frame?titleShow=true" title="Video 2" loading="lazy" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-slide"><iframe src="https://www.aparat.com/video/video/embed/videohash/nofv813/vt/frame?titleShow=true" title="Video 3" loading="lazy" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-slide"><iframe src="https://www.aparat.com/video/video/embed/videohash/rkx5520/vt/frame?titleShow=true" title="Video 4" loading="lazy" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="prev-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+        </section>
 
-        <!-- 📍 بخش اطلاعات تماس -->
-        <div class="section" id="contact">
-            <h2>📍 اطلاعات تماس 📍</h2>
-            <p>نیشابور، ابتدای امین اسلامی، باشگاه کی وان</p>
-            <p class="phone">📞 ۰۹۳۶۱۴۰۳۶۸۸</p>
-            <a href="tel:+989361403688" class="btn">📞 تماس</a>
-            <a href="https://wa.me/989904043144" class="btn">💬 واتساپ</a>
-            <a href="https://instagram.com/the.kickboxer.ney.k_1" class="btn">📸 اینستاگرام</a>
-        </div>
-    </div>
+        <section class="section" id="contact">
+            <h2 class="gsap-reveal">به جمع ما بپیوندید</h2>
+            <p class="gsap-reveal">نیشابور، ابتدای امین اسلامی، باشگاه کی وان</p>
+            <div class="contact-buttons gsap-reveal">
+                <a href="tel:+989361403688" class="btn"><i class="fas fa-phone"></i> تماس</a>
+                <a href="https://wa.me/989904043144" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> واتساپ</a>
+                <a href="https://instagram.com/the.kickboxer.ney.k_1" class="btn" target="_blank"><i class="fab fa-instagram"></i> اینستاگرام</a>
+            </div>
+        </section>
+    </main>
+    
+    <div id="lightbox" class="lightbox"><span class="lightbox-close" id="lightbox-close">&times;</span><img class="lightbox-content" id="lightbox-image"></div>
+    <div id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+    <footer><p>&copy; 2025 - تمامی حقوق برای باشگاه کی‌وان محفوظ است.</p></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- GSAP & ANIMATIONS ---
+            gsap.registerPlugin(ScrollTrigger);
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                gsap.to(preloader, { opacity: 0, duration: 0.5, onComplete: () => preloader.style.display = 'none' });
+                gsap.from(".line-inner", { y: "100%", duration: 1, ease: "power4.out", stagger: 0.1 });
+                gsap.from(".hero .subtitle", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+                gsap.from(".hero .btn", { opacity: 0, y: 20, duration: 1, delay: 0.7 });
+            });
+            gsap.to("[data-speed]", {
+                y: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
+                ease: "none",
+                scrollTrigger: { start: 0, end: "max", scrub: true }
+            });
+
+            // Different animation settings for desktop and mobile
+            ScrollTrigger.matchMedia({
+                "(min-width: 769px)": function() {
+                    const reveals = document.querySelectorAll('.gsap-reveal');
+                    reveals.forEach(el => {
+                        gsap.from(el, { opacity: 0, y: 60, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' } });
+                    });
+                },
+                "(max-width: 768px)": function() {
+                    const reveals = document.querySelectorAll('.gsap-reveal');
+                    reveals.forEach(el => {
+                        gsap.from(el, { opacity: 0, y: 40, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' } });
+                    });
+                }
+            });
+            
+            document.querySelectorAll('.number').forEach(counter => {
+                ScrollTrigger.create({ trigger: counter, start: 'top 90%', once: true, onEnter: () => gsap.to(counter, { duration: 2, innerText: counter.dataset.target, roundProps: "innerText", ease: "power1.out" }) });
+            });
+            
+            // --- UI & UX HELPERS ---
+            // Gallery Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            document.querySelectorAll('.hexagon').forEach(item => {
+                item.addEventListener('click', () => {
+                    lightboxImage.src = item.querySelector('img').src;
+                    lightbox.style.display = 'flex';
+                });
+            });
+            const closeLightbox = () => lightbox.style.display = 'none';
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+            // Video Slider
+            const videoTrack = document.querySelector('.video-track');
+            const slides = document.querySelectorAll('.video-slide');
+            const videoViewport = document.querySelector('.video-viewport');
+            const dotsContainer = document.querySelector('.slider-dots');
+            let currentIndex = 0;
+
+            if (slides.length > 0) {
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                });
+                const dots = document.querySelectorAll('.slider-dots .dot');
+
+                const goToSlide = (index) => {
+                    const slideWidth = videoViewport.offsetWidth;
+                    gsap.to(videoTrack, { x: -index * slideWidth, duration: 0.7, ease: 'power3.inOut' });
+                    currentIndex = index;
+                    dots.forEach(d => d.classList.remove('active'));
+                    dots[index].classList.add('active');
+                };
+
+                document.querySelector('.next-btn').addEventListener('click', () => goToSlide((currentIndex + 1) % slides.length));
+                document.querySelector('.prev-btn').addEventListener('click', () => goToSlide((currentIndex - 1 + slides.length) % slides.length));
+                
+                // Update dots on scroll for touch devices
+                videoViewport.addEventListener('scroll', () => {
+                    const slideWidth = videoViewport.offsetWidth;
+                    const newIndex = Math.round(videoViewport.scrollLeft / slideWidth);
+                    if(newIndex !== currentIndex) {
+                        currentIndex = newIndex;
+                        dots.forEach(d => d.classList.remove('active'));
+                        dots[currentIndex].classList.add('active');
+                    }
+                });
+
+                window.addEventListener('resize', () => goToSlide(currentIndex));
+            }
+
+            // Nav scroll effect
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.getElementById('hamburger-icon');
+            const navLinks = document.getElementById('nav-links');
+            ScrollTrigger.create({ start: "top -80", end: 99999, onUpdate: self => nav.classList.toggle('scrolled', self.direction === 1) });
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.querySelector('i').classList.toggle('fa-bars');
+                hamburger.querySelector('i').classList.toggle('fa-times');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.querySelector('i').classList.add('fa-bars');
+                    hamburger.querySelector('i').classList.remove('fa-times');
+                });
+            });
+
+            // Back to Top Button
+            const toTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => toTopBtn.classList.toggle('visible', window.scrollY > 300));
+            toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        });
+    </script>
 </body>
 </html>
