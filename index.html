@@ -552,12 +552,6 @@
         lightbox?.addEventListener('click', (e) => { if(e.target === lightbox) closeLight(); });
         document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && lightbox?.style.display === 'flex') closeLight(); });
 
-        function bindGalleryClick() {
-            document.querySelectorAll('.gallery-card').forEach(card => {
-                card.removeEventListener('click', galleryHandler);
-                card.addEventListener('click', galleryHandler);
-            });
-        }
         function galleryHandler() {
             const img = this.querySelector('img');
             if(img && lightboxImg) {
@@ -565,8 +559,6 @@
                 lightbox.style.display = 'flex';
             }
         }
-        bindGalleryClick();
-        const observer = new MutationObserver(() => bindGalleryClick());
         if(moreContainer) observer.observe(moreContainer, { childList: true, subtree: true });
 
         // ------------- انیمیشن‌های ورود با اسکرول (GSAP) -------------
