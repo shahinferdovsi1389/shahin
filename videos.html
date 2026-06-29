@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="گالری کامل ویدیوهای اختصاصی استاد فاطمه حسین‌زاده - باشگاه رزمی کی وان">
+    <meta name="theme-color" content="#ff3c00">
+    <title>گالری ویدیوها | کیک بوکسینگ کی وان</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ---------- Reset & Base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+        body {
+            background-color: #030303;
+            color: #f0f0f0;
+            font-family: 'Vazirmatn', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #ff3c00; border-radius: 10px; }
+
+        /* ---------- Background Grain ---------- */
+        .bg-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        /* ---------- Navbar ---------- */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 5%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,60,0,0.5);
+        }
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, #ff9a5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid #ff3c00;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: #ff3c00;
+            box-shadow: 0 0 15px rgba(255,60,0,0.4);
+            transform: translateX(-5px);
+        }
+
+        /* ---------- Page Header ---------- */
+        .page-header {
+            padding: 120px 5% 50px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(255,60,0,0.1) 0%, #030303 70%);
+        }
+        .page-header h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255,60,0,0.3);
+        }
+        .page-header p {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ---------- Video Grid ---------- */
+        .video-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5% 80px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .video-card {
+            background: #0a0a0a;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .video-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,60,0,0.6);
+            box-shadow: 0 15px 40px -10px rgba(255,60,0,0.3);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-info {
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(to top, #0a0a0a, #111);
+            border-top: 1px solid rgba(255,60,0,0.2);
+        }
+        .video-info h3 {
+            font-size: 1rem;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #020202;
+            border-top: 1px solid rgba(255,60,0,0.2);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-grain"></div>
+
+<nav class="main-nav">
+    <div class="nav-logo">🥊 کی وان</div>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> بازگشت به خانه</a>
+</nav>
+
+<header class="page-header">
+    <h1>آرشیو <span style="color:#ff3c00;">ویدیوها</span></h1>
+    <p>نمایش تکنیک‌ها، مبارزات و جلسات تمرینی باشگاه حرفه‌ای کی وان</p>
+</header>
+
+<main class="video-container">
+    <div class="video-grid" id="videoGrid">
+        
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/teqm3jr/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/cvp2p7p/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/npebzmb/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/chh5j4s/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۴</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/pazr3ak/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۵</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/pricq80/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۶</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/mjog10h/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۷</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/foj0601/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۸</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/vqn410r/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۹</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/zys2j6i/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۰</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/clenvzu/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۱</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/rttxd93/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۲</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/cks24ik/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۳</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ohlz634/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۴</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/aspon7c/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۵</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ksu1ahk/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۶</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/hwx5uan/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۷</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/slj34iv/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۸</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ujbd252/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۱۹</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/lkf1nmr/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۰</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/nofv813/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۱</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/rkx5520/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۲</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ebpb1x1/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۳</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/uxj23e5/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۴</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/udu557n/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۵</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/zpkk238/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۶</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ent55d8/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۷</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/uxb2pyl/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۸</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/dcj4f82/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۲۹</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/pkjq6l4/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۰</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/xyr6to1/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۱</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/gwuo3u4/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۲</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ntm507y/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۳</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/vji22im/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۴</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/fvqy9om/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۵</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/vhw0w22/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۶</h3></div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.aparat.com/video/video/embed/videohash/ofe10lv/vt/frame?titleShow=true" loading="lazy" allowfullscreen></iframe></div><div class="video-info"><h3>ویدیو ۳۷</h3></div></div>
+
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 باشگاه کی وان | تمامی حقوق محفوظ</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // انیمیشن ورود عنوان صفحه
+    gsap.from(".page-header h1, .page-header p", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+
+    // انیمیشن پلهکانی و روان برای لود شدن تک تک کارت‌ها زمان اسکرول
+    gsap.utils.toArray('.video-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top 92%",
+                toggleActions: "play none none none"
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.5,
+            delay: (i % 3) * 0.08, // افکت آبشاری برای کارت‌های هم‌ردیف
+            ease: "power2.out"
+        });
+    });
+</script>
+</body>
+</html>
